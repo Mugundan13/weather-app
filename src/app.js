@@ -8,6 +8,8 @@ const forecast = require("./utils/forecast")
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 //paths for handlebar views, partials and public path to serve
 const publicDirectoryPath = path.join(__dirname, "../public")
 const viewsPath = path.join(__dirname, "../templates/views")
@@ -69,6 +71,6 @@ app.get("*", (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("server up and running...")
+app.listen(port, () => {
+    console.log(`server up and running in ${port}...`)
 })
